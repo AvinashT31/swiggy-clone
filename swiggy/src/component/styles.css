@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#signup {
+    border: 1px solid black;
+    width: 40%;
+    height: 650px;
+    position: relative;
+    bottom: 133%;
+    background-color: white;
+    animation: swap-in 2s forwards
+    /* border: none;
+    outline: none; */
+}
+
+@keyframes swap-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  #signup>div:nth-child(1){
+    font-size: 25px;
+    padding-top: 20px;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+
+
+#signup>div:nth-child(2) {
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    height: 90px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#signup>div:nth-child(2)>div:nth-child(2) {
+    line-height: 0.8;
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 90px;
+}
+
+#signup>div:nth-child(2)>div:nth-child(2) {
+    /* border: 1px solid black; */
+    width: 40%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+#signup>div:nth-child(2)>div:nth-child(2) img {
+    width: 55%;
+    height: 100%;
+}
+
+form {
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    height: 260px;
+    margin-top: 50px;
+}
+
+form input {
+    width: 83%;
+    height: 50px;
+    font-size: 18px;
+    padding-left: 20px;
+    margin: 5px 0px;
+}
+
+
+form :nth-child(4){
+    width: 90%;
+}
+
+form button {
+    width: 89%;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 800;
+    background-color: rgb(252, 128, 25);
+    color: white;
+    border: none;
+    outline: none;
+}
+
+#signup>div:nth-child(3) {
+    width: 90%;
+    margin: auto;
+    font-size: 14px;
+}
