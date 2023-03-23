@@ -1,8 +1,30 @@
 import './styles.css'
 import Signup from './Signup'
 import Login from './Login'
+import { useState } from 'react'
 
 function Index() {
+
+const[displaysignup, setdisplaysignup] = useState("false");
+console.log(displaysignup, "displaysignup");
+
+const[displaylogin, setdisplaylogin] =useState("false");
+console.log(displaylogin, "displaylogin");
+
+function closeSignup(){
+    setdisplaylogin(false);
+    setdisplaysignup(false);
+}
+
+function signup() {
+    setdisplaysignup(true);
+}
+
+function login(){
+    setdisplaylogin(true);
+}
+
+
     return (
         <div id="full-page">
             <div id='nav'>
@@ -14,10 +36,10 @@ function Index() {
                             </div>
                             <div>
                                 <div>
-                                    <button>login</button>
+                                    <button onClick={() => login()}>login</button>
                                 </div>
                                 <div>
-                                    <button>Signup</button>
+                                    <button onClick={() => signup()}>Signup</button>
                                 </div>
                             </div>
                         </div>
@@ -74,8 +96,8 @@ function Index() {
                             <p>Experience Swiggy's superfast delivery for food delivered fresh & on time</p>
                         </div>
                     </div>
-                    {<Signup/>}
-                    {<Login/>} 
+                    {displaysignup && <Signup onClose={() => closeSignup()}/>}
+                    {displaylogin && <Login/>} 
                 </div>
             </div>
            

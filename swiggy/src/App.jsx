@@ -13,7 +13,7 @@ function App() {
         <Route exact path='/' element={<Index />} />
         {/* <Route exact path='/signup' element={<Signup/>} />
         <Route exacr path = '/login' element={<Login/>} /> */}
-        <Route exact path='/addproduct' element={<Addproduct/>} />
+        <Route exact path='/Addtheproduct' element={<Addproduct/>} />
 
 
 
