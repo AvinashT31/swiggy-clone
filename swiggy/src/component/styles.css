@@ -1,104 +1,441 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-#signup {
-    border: 1px solid black;
-    width: 40%;
-    height: 650px;
-    position: relative;
-    bottom: 133%;
-    background-color: white;
-    animation: swap-in 2s forwards
-    /* border: none;
-    outline: none; */
+#full-page {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 930px;
 }
 
-@keyframes swap-in {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  #signup>div:nth-child(1){
-    font-size: 25px;
-    padding-top: 20px;
-    margin-left: 30px;
-    cursor: pointer;
-  }
-
-
-#signup>div:nth-child(2) {
+#nav {
     /* border: 1px solid black; */
-    width: 90%;
+    width: 100%;
+    height: 530px;
+    display: flex;
+}
+
+#nav-left {
+    /* border: 1px solid black; */
+    width: 60%;
+    height: 530px;
+}
+
+#nav-left-content {
+    /* border: 1px solid black; */
+    width: 80%;
     margin: auto;
-    height: 90px;
-    margin-top: 40px;
+    height: 530px;
+}
+
+#nav-left-content>div:nth-child(1) {
+    /* border: 1px solid black; */
+    width: 100%;
+    margin-top: 20px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
 }
 
-#signup>div:nth-child(2)>div:nth-child(2) {
-    line-height: 0.8;
+#nav-left-content>div:nth-child(1)>div:nth-child(1) {
     /* border: 1px solid black; */
-    width: 50%;
-    height: 90px;
+    width: 30%;
+    height: 80px;
 }
 
-#signup>div:nth-child(2)>div:nth-child(2) {
-    /* border: 1px solid black; */
-    width: 40%;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-}
-
-#signup>div:nth-child(2)>div:nth-child(2) img {
-    width: 55%;
+#nav-left-content>div:nth-child(1)>div:nth-child(1) img {
+    width: 75%;
     height: 100%;
 }
 
-form {
+#nav-left-content>div:nth-child(1)>div:nth-child(2) {
     /* border: 1px solid black; */
-    width: 90%;
-    margin: auto;
-    height: 260px;
-    margin-top: 50px;
+    width: 25%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-form input {
-    width: 83%;
-    height: 50px;
-    font-size: 18px;
-    padding-left: 20px;
-    margin: 5px 0px;
-}
-
-
-form :nth-child(4){
-    width: 90%;
-}
-
-form button {
-    width: 89%;
-    height: 50px;
+#nav-left-content>div:nth-child(1)>div:nth-child(2)>div:nth-child(1) {
+    /* border: 1px solid black; */
+    width: 40%;
+    height: 35px;
     margin-top: 20px;
-    font-size: 14px;
-    font-weight: 800;
-    background-color: rgb(252, 128, 25);
-    color: white;
     border: none;
     outline: none;
 }
 
-#signup>div:nth-child(3) {
+#nav-left-content>div:nth-child(1)>div:nth-child(2)>div:nth-child(1) button {
+    font-weight: 800;
+    font-size: 15px;
+    margin-top: 2px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+#nav-left-content>div:nth-child(1)>div:nth-child(2)>div:nth-child(2) {
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 35px;
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    outline: none;
+}
+
+#nav-left-content>div:nth-child(1)>div:nth-child(2)>div:nth-child(2) button {
+    font-weight: 800;
+    font-size: 15px;
+    margin-top: 2px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+}
+
+#nav-left-content>div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 100%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+#nav-left-content>div:nth-child(2) p{
+    font-size: 20px;
+    color: rgb(163,116,120);
+}
+
+#nav-left-content>div:nth-child(3){
+   border: 1px solid rgb(169,171,178);
+   width: 100%;
+   height: 60px;
+   display: flex;
+   margin-top: 60px;
+}
+
+#nav-left-content > div:nth-child(3) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 75%;
+    height: 60px;
+}
+
+#nav-left-content > div:nth-child(3) > div:nth-child(1)  input{
+    font-size: 20px;
     width: 90%;
     margin: auto;
-    font-size: 14px;
+    margin-top: 18px;
+    border: none;
+    outline: none;
+}
+
+#nav-left-content > div:nth-child(3) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 25%;
+    height: 60px;
+    background-color: rgb(252,128,25);
+}
+
+#nav-left-content > div:nth-child(3) > div:nth-child(2) button{
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(252,128,25);
+    color: white;
+}
+
+#nav-left-content > div:nth-child(4){
+    /* border: 1px solid black; */
+    width: 100%;
+    text-align: left;
+    margin-top: 40px;
+    line-height: 1.5;
+    color: rgb(163,116,120);
+}
+
+#nav-right {
+    /* border: 1px solid black; */
+    width: 40%;
+    height: 530px;
+}
+
+#nav-right > div{
+   /* border: 1px solid black; */
+   width: 100%;
+   height: 530px;
+}
+
+#nav-right > div img{
+    width: 100%;
+    height: 100%;
+}
+
+#content{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 400px;
+    background-color: rgb(43,30,22);
+}
+
+#content > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#content > div:nth-child(1) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 25%;
+    height: 400px;
+}
+
+#content > div:nth-child(1) > div:nth-child(1) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 250px;
+}
+
+
+#content > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) img{
+    width: 40%;
+    height: 100%;   
+}
+
+#content > div:nth-child(1) > div:nth-child(1) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 150px;
+    line-height: 1.5;
+}
+
+#content > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) h3{
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    color: white;
+}
+
+#content > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) p{
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    color: white;
+}
+
+
+#content > div:nth-child(1) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 25%;
+    height: 400px;
+}
+
+#content > div:nth-child(1) > div:nth-child(2) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 250px;
+}
+
+
+#content > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) img{
+    width: 40%;
+    height: 100%;   
+}
+
+#content > div:nth-child(1) > div:nth-child(2) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 150px;
+    line-height: 1.5;
+}
+
+#content > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) h3{
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    color: white;
+}
+
+#content > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) p{
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    color: white;
+}
+
+#content > div:nth-child(1) > div:nth-child(3){
+    /* border: 1px solid black; */
+    width: 25%;
+    height: 400px;
+}
+
+#content > div:nth-child(1) > div:nth-child(3) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 250px;
+}
+
+#content > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) img{
+    width: 40%;
+    height: 100%;   
+}
+
+#content > div:nth-child(1) > div:nth-child(3) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 150px;
+    line-height: 1.5;
+}
+
+#content > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) h3{
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    color: white;
+}
+
+#content > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) p{
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    color: white;
+}
+
+
+/* Signup page */
+
+#signup-page{
+    border: 1px solid black;
+    width: 30%;
+    height: 530px;
+}
+
+#signup-page > div:nth-child(1){
+    /* border: 1px solid black; */
+    font-size: 30px;
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#signup-page > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    height: 70px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#signup-page > div:nth-child(2) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 60%;
+    height: 70px;
+    text-align: left;
+}
+
+#signup-page > div:nth-child(2) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 30%;
+    height: 70px;
+}
+
+#signup-page > div:nth-child(2) > div:nth-child(2) img{
+    width: 100%;
+    height: 100%;
+}
+
+#signup-page > div:nth-child(3){
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    height: 210px;
+}
+
+form input{
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#signup-page > div:nth-child(4){
+    /* border: 1px solid black; */
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* Login-page */
+
+#login-page{
+    border: 1px solid black;
+    width: 30%;
+    height: 530px;
+}
+
+#login-page > div:nth-child(1){
+    /* border: 1px solid black; */
+    font-size: 30px;
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#login-page > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    height: 70px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#login-page > div:nth-child(2) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 60%;
+    height: 70px;
+    text-align: left;
+}
+
+#login-page > div:nth-child(2) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 30%;
+    height: 70px;
+}
+
+#login-page > div:nth-child(2) > div:nth-child(2) img{
+    width: 100%;
+    height: 100%;
+}
+
+#login-page > div:nth-child(3){
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    height: 120px;
+}
+
+form input{
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#login-page > div:nth-child(4){
+    /* border: 1px solid black; */
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
 }
