@@ -52,7 +52,7 @@
 
 #nav-left-content>div:nth-child(1)>div:nth-child(2) {
     /* border: 1px solid black; */
-    width: 25%;
+    width: 35%;
     height: 80px;
     display: flex;
     justify-content: space-evenly;
@@ -81,7 +81,7 @@
     width: 50%;
     height: 35px;
     margin-top: 20px;
-    background-color: black;
+    /* background-color: black; */
     border: none;
     outline: none;
 }
@@ -92,8 +92,27 @@
     margin-top: 2px;
     border: none;
     outline: none;
-    background-color: black;
-    color: white;
+    background-color: white;
+
+}
+
+#nav-left-content>div:nth-child(1)>div:nth-child(2)>div:nth-child(3) {
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 35px;
+    margin-top: 20px;
+    /* background-color: black; */
+    border: none;
+    outline: none;
+}
+
+#nav-left-content>div:nth-child(1)>div:nth-child(2)>div:nth-child(3) button {
+    font-weight: 800;
+    font-size: 15px;
+    margin-top: 2px;
+    border: none;
+    outline: none;
+    background-color: white;
 }
 
 #nav-left-content>div:nth-child(2){
@@ -148,6 +167,7 @@
     outline: none;
     background-color: rgb(252,128,25);
     color: white;
+    cursor: pointer;
 }
 
 #nav-left-content > div:nth-child(4){
@@ -306,6 +326,12 @@
 
 /* Signup page */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #signup-page{
     border: 1px solid black;
     width: 45%;
@@ -389,6 +415,12 @@ form input{
 
 /* Login-page */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #login-page{
     border: 1px solid black;
     width: 30%;
@@ -459,6 +491,11 @@ form input{
 
 /* showproduct page */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 #addproduct-fullpage{
     border: 1px solid black;
@@ -528,7 +565,7 @@ form input{
     width: 15%;
     height: 35px;
     margin-top: 25px;
-display: flex;
+    display: flex;
 }
 
 #addproduct-nav > div:nth-child(2) > div:nth-child(1) i{
@@ -614,6 +651,7 @@ display: flex;
     height: 35px;
     margin-top: 25px;
     display: flex;
+    cursor: pointer;
 }
 
 #addproduct-nav > div:nth-child(2) > div:nth-child(4) i{
@@ -624,6 +662,7 @@ display: flex;
     border: none;
     outline: none;
     color: rgb(73, 73, 77);
+    cursor: pointer;
 }
 
 #addproduct-nav > div:nth-child(2) > div:nth-child(4) input{
@@ -634,6 +673,7 @@ display: flex;
     border: none;
     outline: none;
     color: rgb(73, 73, 77);
+    cursor: pointer;
 }
 
 #addproduct-nav > div:nth-child(2) > div:nth-child(5){
@@ -757,6 +797,12 @@ display: flex;
 
 /* Addproduct page */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #Product{
     /* border: 1px solid black; */
     width: 100%;
@@ -781,8 +827,6 @@ display: flex;
     margin-top: 20px;
 }
 
-
-
 #ProductData > div img{
     /* border: 1px solid black; */
     width: 90%;
@@ -806,20 +850,26 @@ display: flex;
 
 /* Cart page */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #Cart-fullpage{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
-    height: 800px;
+    height: 625px;
 }
 
 #cart-navbar {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     height: 80px;
 }
 
 #cart-nav{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 90%;
     margin: auto;
     height: 80px;
@@ -828,14 +878,14 @@ display: flex;
 }
 
 #cart-nav > div:nth-child(1){
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 40%;
     height: 80px;
     display: flex;
 }
 
 #cart-nav > div:nth-child(1) > div:nth-child(1){
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 20%;
     height: 80px;
 }
@@ -852,16 +902,147 @@ display: flex;
 }
 
 #cart-nav > div:nth-child(2){
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 20%;
     height: 80px;
+    display: flex;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(1){
+    /* border: 1px solid black; */
+    height: 80px;
+    width: 40%;
+    display: flex;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(1) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 25%;
+    height: 80px;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) i{
+    margin-top: 27px;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(1) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 30%;
+    height: 80px;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) input{
+    width: 160%;
+    font-size: 18px;
+    margin-top: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding-left: 5px;
+}
+#cart-nav > div:nth-child(2) > div:nth-child(2){
+    /* border: 1px solid black; */
+    height: 80px;
+    width: 50%;
+    display: flex;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(2) > div:nth-child(1){
+    /* border: 1px solid black; */
+    width: 40%;
+    height: 80px;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) i{
+    margin-top: 27px;
+    padding-left: 15px;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(2) > div:nth-child(2){
+    /* border: 1px solid black; */
+    width: 30%;
+    height: 80px;
+}
+
+#cart-nav > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) input{
+    width: 200%;
+    font-size: 18px;
+    margin-top: 25px;
+    border: none;
+    outline: none;
 }
 
 #cart-info{
     border: 1px solid black;
     width: 100%;
-    height: 400px;
+    height: 500px;
 }
+
+#cart-info-content{
+    border: 1px solid black;
+    width: 90%;
+    margin: auto;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cart-info-content > div{
+    border: 1px solid black;
+    width: 25%;
+    height: 300px;
+
+}
+
+#cart-second{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 625px;
+    background-color: rgb(255,255,255);
+}
+
+#cart-second-content{
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    height: 625px;
+}
+
+#cart-second-content > div :nth-child(1){
+    /* border: 1px solid black; */
+    width: 35%;
+    margin: auto;
+    height: 400px;
+    margin-top: 80px;
+}
+
+#cart-second-content > div :nth-child(1) img{
+    width: 100%;
+    height: 100%;
+}
+
+#cart-second-content > h4{
+margin-top: 10px;
+color: rgb(83,86,126);
+} 
+
+#cart-second-content > p{
+    margin-top: 10px;
+    color: rgb(147,128,170);
+}
+
+#cart-second-content > button{
+    height: 30px;
+    margin-top: 12px;
+    width: 21%;
+    background-color: rgb(252,128,25);
+    color: white;
+    border: none;
+    outline: none;
+}
+
+
+
 
 
 

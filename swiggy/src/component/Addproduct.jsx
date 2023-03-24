@@ -1,10 +1,21 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles.css'
 
 function Addproduct() {
 
     const [Product, setProduct] = useState();
     console.log(Product, "Product")
+
+    const route = useNavigate();
+
+    function signin(){
+        route('/');
+    }
+
+    function cart(){
+        route('/Cart');
+    }
 
     useEffect(() => {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
@@ -27,16 +38,17 @@ function Addproduct() {
 
         if(currentuser){
             for(var i=0; i < DataFromLS.length; i++){
-                if(DataFromLS[i].Email === currentuser["current-user-email"]){
+                if(DataFromLS[i].Email === currentuser['current-user-email']){
                   var newObj = DataFromLS[i];
-                  newObj["Cartproduct"] = ["Cartproduct"] || [];
-                  newObj["Cartproduct"].push(e);
+                  newObj['Cartproduct'] = ['Cartproduct'] || [];
+                  newObj['Cartproduct'].push(e);
                   Alluser.push(newObj);
                 }
                 else{
                     Alluser.push(DataFromLS[i]);
                 }
             }
+            // console.log(Alluser, "hey");
             localStorage.setItem("UserForReact", JSON.stringify(Alluser));
             alert("Product added into the cart")
         }
@@ -88,7 +100,7 @@ function Addproduct() {
                                 <i class="fa-regular fa-user"></i>
                             </div>
                             <div>
-                                <input type="text" placeholder='Sign In' />
+                                <input onClick={() => signin()} type="text" placeholder='Sign In' />
                             </div>
                         </div>
                         <div>
@@ -96,7 +108,7 @@ function Addproduct() {
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>
                             <div>
-                                <input type="text" placeholder='Cart' />
+                                <input onClick={() => cart()} type="text" placeholder='Cart' />
                             </div>
                         </div>
                     </div>
@@ -127,7 +139,6 @@ function Addproduct() {
                             <p>Price Rs.250</p>
                             <button onClick={() => AddToCart(e)}>Add To Cart</button>
                         </div>
-
                     ))}
                 </div>
             </div>

@@ -1,7 +1,8 @@
 import './styles.css'
 import Signup from './Signup'
 import Login from './Login'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Index() {
 
@@ -10,6 +11,27 @@ function Index() {
 
     const [displaylogin, setdisplaylogin] = useState("false");
     console.log(displaylogin, "displaylogin");
+
+    const [currentuser, setcurrentuser] = useState(false);
+    console.log(currentuser, "currentuser");
+
+    useEffect(() => {
+        var currentuserFromLS = JSON.parse(localStorage.getItem("current-user"));
+        if (currentuserFromLS) {
+            setcurrentuser(true);
+        }
+    }, [])
+
+    function logout() {
+        localStorage.removeItem("current-user");
+        alert("logout successfully")
+    }
+
+    const route = useNavigate();
+
+    function findfood() {
+        route('/Addtheproduct');
+    }
 
     function signup() {
         setdisplaysignup(true);
@@ -31,10 +53,13 @@ function Index() {
                             </div>
                             <div>
                                 <div>
-                                    <button onClick={() => login()}>login</button>
+                                    {!currentuser && <button onClick={() => login()}>login</button>}
                                 </div>
                                 <div>
-                                    <button onClick={() => signup()}>Signup</button>
+                                    {!currentuser && <button onClick={() => signup()}>Signup</button>}
+                                </div>
+                                <div>
+                                {currentuser && <button onClick={() => logout()}>Logout</button>}
                                 </div>
                             </div>
                         </div>
@@ -47,7 +72,7 @@ function Index() {
                                 <input type="text" placeholder='Enter Your delivery Location' />
                             </div>
                             <div>
-                                <button>Find Food</button>
+                                <button onClick={() => findfood()}>Find Food</button>
                             </div>
                         </div>
                         <div>

@@ -1,12 +1,12 @@
- import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './styles.css'
 
 function Cart() {
 
-    const [cartData, setcartData] = useState("");
-    console.log(cartData, "cartData");
+    const [Cartproduct, setCartproduct] = useState();
+    console.log(Cartproduct, "Cartproduct");
 
-    const [currentuser, setcurrentuser] = useState("false");
+    const [currentuser, setcurrentuser] = useState(false);
     console.log(currentuser, "currentuser");
 
     useEffect(() => {
@@ -16,12 +16,16 @@ function Cart() {
         var DataFromLS = JSON.parse(localStorage.getItem("UserForReact"));
         console.log(DataFromLS, "DataFromLS");
 
-        if (currentuser) {
-            for (var i = 0; DataFromLS[i].length; i++) {
-                if (DataFromLS[i].Email === currentuser && DataFromLS[i].Cartproduct) {
-                    setcurrentuser(true);
-                    setcartData(DataFromLS[i].cartData)
-                }
+        //    var flag =false;
+
+        for (var i = 0; i < DataFromLS.length; i++) {
+            if (DataFromLS[i].Email === currentuser['current-user-email'] && DataFromLS[i].Cartproduct) {
+                // flag = true;
+                setcurrentuser(true);
+                setCartproduct(DataFromLS[i].Cartproduct);
+            }
+            else{
+                setcurrentuser(false);
             }
         }
 
@@ -44,22 +48,46 @@ function Cart() {
                         </div>
                     </div>
                     <div>
-
-                    </div>
-                </div>
-                <div id='cart-info'>
-                    {cartData && cartData.map((e, i) => (
-                        <div key={i}>
+                        <div>
                             <div>
-                                <img src={e.strDrinkThumb} alt="product" />
+                                <i class="fa-brands fa-hire-a-helper"></i>
                             </div>
                             <div>
-                                <h3>{e.strDrink}</h3>
-                                <p>Malad West</p>
+                                <input type="text" placeholder='Help' />
                             </div>
                         </div>
-                    ))}
+                        <div>
+                            <div>
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div>
+                                <input type="text" placeholder='Sign In' />
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {currentuser && <div id='cart-info'>
+                    <div id='cart-info-content'>
+                        <div>
+                            {Cartproduct && Cartproduct.map((e, i) => (
+                                <div key="i">
+                                    <img src={e.strDrinkThumb} alt="" />
+                                    <h3>{e.strDrink}</h3>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>}
+                {!currentuser && <div id='cart-second'>
+                    <div id='cart-second-content'>
+                        <div>
+                            <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0" alt="" />
+                        </div>
+                        <h4>Your cart is empty</h4>
+                        <p>You can go to home page to view more restaurants</p>
+                        <button>SEE REASTAURANTS NEAR YOU</button>
+                    </div>
+                </div>}
             </div>
 
         </div>
