@@ -5,24 +5,19 @@ import { useState } from 'react'
 
 function Index() {
 
-const[displaysignup, setdisplaysignup] = useState("false");
-console.log(displaysignup, "displaysignup");
+    const [displaysignup, setdisplaysignup] = useState("false");
+    console.log(displaysignup, "displaysignup");
 
-const[displaylogin, setdisplaylogin] =useState("false");
-console.log(displaylogin, "displaylogin");
+    const [displaylogin, setdisplaylogin] = useState("false");
+    console.log(displaylogin, "displaylogin");
 
-function closeSignup(){
-    setdisplaylogin(false);
-    setdisplaysignup(false);
-}
+    function signup() {
+        setdisplaysignup(true);
+    }
 
-function signup() {
-    setdisplaysignup(true);
-}
-
-function login(){
-    setdisplaylogin(true);
-}
+    function login() {
+        setdisplaylogin(true);
+    }
 
 
     return (
@@ -96,11 +91,11 @@ function login(){
                             <p>Experience Swiggy's superfast delivery for food delivered fresh & on time</p>
                         </div>
                     </div>
-                    {displaysignup && <Signup onClose={() => closeSignup()}/>}
-                    {displaylogin && <Login/>} 
+                    {<Signup />}
+                    {<Login />}
                 </div>
             </div>
-           
+
 
         </div >
     )

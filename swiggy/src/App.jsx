@@ -5,6 +5,7 @@ import Index from './component/Index';
 // import Signup from './component/Signup';
 // import Login from './component/Login';
 import Addproduct from './component/Addproduct';
+import Cart from './component/cart'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         {/* <Route exact path='/signup' element={<Signup/>} />
         <Route exacr path = '/login' element={<Login/>} /> */}
         <Route exact path='/Addtheproduct' element={<Addproduct/>} />
-
+        <Route exact path ='/Cart' element={<Cart/>} />
 
 
       </Routes>

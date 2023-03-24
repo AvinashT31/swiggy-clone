@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { json } from 'react-router-dom';
 import './styles.css'
 
-function Signup(data) {
+function Signup() {
 
     const [userData, setuserData] = useState({Number:"", Name:"", Email:""});
     console.log(userData, "userData");
@@ -47,7 +47,7 @@ function Signup(data) {
 
     return (
         <div id="signup-page">
-            <div onClick={data.onclose}>X</div>
+            <div>X</div>
             <div>
                 <div>
                     <h1>Sign Up</h1>
