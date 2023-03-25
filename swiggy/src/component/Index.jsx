@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 function Index() {
 
-    const [displaysignup, setdisplaysignup] = useState("false");
+    const [displaysignup, setdisplaysignup] = useState(false);
     console.log(displaysignup, "displaysignup");
 
-    const [displaylogin, setdisplaylogin] = useState("false");
+    const [displaylogin, setdisplaylogin] = useState(false);
     console.log(displaylogin, "displaylogin");
 
     const [currentuser, setcurrentuser] = useState(false);
@@ -35,6 +35,7 @@ function Index() {
 
     function signup() {
         setdisplaysignup(true);
+        // route('/signup')
     }
 
     function login() {
@@ -52,15 +53,15 @@ function Index() {
                                 <img src="https://logos-world.net/wp-content/uploads/2020/11/Swiggy-Symbol.png" alt="" />
                             </div>
                             <div>
-                                <div>
-                                    {!currentuser && <button onClick={() => login()}>login</button>}
-                                </div>
-                                <div>
-                                    {!currentuser && <button onClick={() => signup()}>Signup</button>}
-                                </div>
-                                <div>
-                                {currentuser && <button onClick={() => logout()}>Logout</button>}
-                                </div>
+                            {!currentuser && <div>
+                                    <button onClick={() => login()}>login</button>
+                                </div> }
+                                {!currentuser && <div>
+                                    <button onClick={() => signup()}>Signup</button>
+                                </div> }
+                                {currentuser && <div>
+                                 <button onClick={() => logout()}>Logout</button>
+                                </div>}
                             </div>
                         </div>
                         <div>

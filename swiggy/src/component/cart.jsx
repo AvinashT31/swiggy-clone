@@ -24,9 +24,9 @@ function Cart() {
                 setcurrentuser(true);
                 setCartproduct(DataFromLS[i].Cartproduct);
             }
-            else{
-                setcurrentuser(false);
-            }
+            // else{
+            //     setcurrentuser(false);
+            // }
         }
 
     }, [])
@@ -66,7 +66,7 @@ function Cart() {
                         </div>
                     </div>
                 </div>
-                {currentuser && <div id='cart-info'>
+                {currentuser ? <div id='cart-info'>
                     <div id='cart-info-content'>
                         <div>
                             {Cartproduct && Cartproduct.map((e, i) => (
@@ -77,8 +77,8 @@ function Cart() {
                             ))}
                         </div>
                     </div>
-                </div>}
-                {!currentuser && <div id='cart-second'>
+                </div> :
+                 <div id='cart-second'>
                     <div id='cart-second-content'>
                         <div>
                             <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0" alt="" />
