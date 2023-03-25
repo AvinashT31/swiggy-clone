@@ -70,7 +70,7 @@ function Cart() {
                     <div id='cart-info-content'>
                         <div>
                             {Cartproduct && Cartproduct.map((e, i) => (
-                                <div key="i">
+                                <div id='carts' key="i">
                                     <img src={e.strDrinkThumb} alt="" />
                                     <h3>{e.strDrink}</h3>
                                 </div>

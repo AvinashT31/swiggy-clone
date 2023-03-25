@@ -117,8 +117,8 @@ function Index() {
                             <p>Experience Swiggy's superfast delivery for food delivered fresh & on time</p>
                         </div>
                     </div>
-                    {<Signup />}
-                    {<Login />}
+                    {displaysignup && <Signup/>}
+                    {displaylogin && <Login/>}
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { json } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
 import './styles.css'
 
 function Signup() {
@@ -7,6 +7,7 @@ function Signup() {
     const [userData, setuserData] = useState({Number:"", Name:"", Email:""});
     console.log(userData, "userData");
 
+    const route = useNavigate();
 
     function Register(e){
         // alert("working");
