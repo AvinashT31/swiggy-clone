@@ -1087,6 +1087,38 @@ color: rgb(83,86,126);
 }
 
 
+/* showname page */
+
+#shownamedisplay{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#shownamepage{
+    border: 1px solid black;
+    width: 25%;
+    height: 350px;
+    border-radius: 10px;
+}
+
+#shownamepage img{
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+#shownamepage p{
+    margin-top: 5px;
+}
+
+
 
 
 

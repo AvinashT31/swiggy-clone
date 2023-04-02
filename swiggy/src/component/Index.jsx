@@ -15,6 +15,9 @@ function Index() {
     const [currentuser, setcurrentuser] = useState(false);
     console.log(currentuser, "currentuser");
 
+    const[displayData, setdisplayData] = useState("");
+    console.log(displayData, "displayData");
+
     useEffect(() => {
         var currentuserFromLS = JSON.parse(localStorage.getItem("current-user"));
         if (currentuserFromLS) {
@@ -30,7 +33,13 @@ function Index() {
     const route = useNavigate();
 
     function findfood() {
-        route('/Addtheproduct');
+        // route('/Addtheproduct');
+       route(`/search/${displayData}`);     
+    
+    }
+
+    function updatingData(e){
+        setdisplayData(e.target.value);
     }
 
     function signup() {
@@ -70,9 +79,10 @@ function Index() {
                         </div>
                         <div>
                             <div>
-                                <input type="text" placeholder='Enter Your delivery Location' />
+                                <input onChange={updatingData} type="text" placeholder='Enter Your delivery Location' />
                             </div>
                             <div>
+                                {/* <button onClick={() => findfood()}>Find Food</button> */}
                                 <button onClick={() => findfood()}>Find Food</button>
                             </div>
                         </div>

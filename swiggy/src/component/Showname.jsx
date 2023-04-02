@@ -1,67 +1,34 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './styles.css'
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import './styles.css';
 
-function Addproduct() {
+function Showname() {
 
-    const [Product, setProduct] = useState();
-    console.log(Product, "Product")
+    const [showname, setshowname] = useState();
+    console.log(showname, "showname");
 
-    const route = useNavigate();
-
-    function signin(){
-        route('/');
-    }
-
-    function cart(){
-        route('/Cart');
-    }
+    const userData = useParams();
 
     useEffect(() => {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
             .then(res => res.json())
-            .then(json => setProduct(json.drinks))
-    }, [])
-    console.log(Product, "hwuy");
+            .then(json => json.drinks)
+            .then(json => json.filter(obj => obj.strDrink == userData.name))
+            .then(res => setshowname(res));
+    }, [userData.name])
+    console.log(showname, "heree")
 
-    function AddToCart(e){
-        
-        console.log(e);
-        // alert("working");
-
-        var DataFromLS = JSON.parse(localStorage.getItem("UserForReact"));
-        console.log(DataFromLS, "DataFromLS");
-
-        var currentuser = JSON.parse(localStorage.getItem("current-user"));
-        console.log(currentuser, "currentuser");
-
-         var Alluser = []; 
-
-        if(currentuser){
-            for(var i=0; i < DataFromLS.length; i++){
-                if(DataFromLS[i].Email === currentuser['current-user-email']){
-                  var newObj = DataFromLS[i];
-                  newObj['Cartproduct'] = ['Cartproduct'] || [];
-                  newObj['Cartproduct'].push(e);
-                  Alluser.push(newObj);
-                }
-                else{
-                    Alluser.push(DataFromLS[i]);
-                }
-            }
-            // console.log(Alluser, "hey");
-            localStorage.setItem("UserForReact", JSON.stringify(Alluser));
-            alert("Product added into the cart")
-        }
-        else{
-            alert("login first");
-        }
+    function signin(){
 
     }
 
+    function cart(){
+        
+    }
+
     return (
-        <div id="addproduct-fullpage">
-            z<div id='addproduct-navbar'>
+        <div>
+            <div id='addproduct-navbar'>
                 <div id='addproduct-nav'>
                     <div>
                         <div>
@@ -115,36 +82,16 @@ function Addproduct() {
                     </div>
                 </div>
             </div>
-            <div id='addproduct-gallery'>
-                <div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/pneknawbadtvceqzwiep" alt="" />
+            <div id="shownamedisplay">
+                {showname && showname.map((e, i) => (
+                    <div id="shownamepage">
+                        <img src={e.strDrinkThumb} />
+                        <p>{e.strDrink}</p>
                     </div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="" />
-                    </div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/zpkkdkmvlj5cuvqbc50t" alt="" />
-                    </div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3" alt="" />
-                    </div>
-                </div>
-            </div>
-            <div id='Product'>
-                <div id='ProductData'>
-                    {Product && Product.map((e, i) => (
-                        <div key="i" onClick={() => route(`/addtheproduct/${e.idDrink}`)}>
-                            <img src={e.strDrinkThumb} alt="" />
-                            <p>{e.strDrink}</p>
-                            <p>Price Rs.250</p>
-                            <button onClick={() => AddToCart(e)}>Add To Cart</button>
-                        </div>
-                    ))}
-                </div>
+                ))}
             </div>
         </div>
     )
 
 }
-export default Addproduct;
+export default Showname;
