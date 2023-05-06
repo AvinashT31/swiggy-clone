@@ -33,9 +33,8 @@ function Index() {
     const route = useNavigate();
 
     function findfood() {
-        // route('/Addtheproduct');
-       route(`/search/${displayData}`);     
-    
+        route('/Addtheproduct');
+    //    route(`/search/${displayData}`);      
     }
 
     function updatingData(e){

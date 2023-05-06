@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 import './styles.css';
+import reducer, { initialState } from "../Reducer.js/ReducerB";
+
 
 function Showname() {
 
@@ -25,6 +27,9 @@ function Showname() {
     function cart(){
         
     }
+
+
+    
 
     return (
         <div>
@@ -87,6 +92,7 @@ function Showname() {
                     <div id="shownamepage">
                         <img src={e.strDrinkThumb} />
                         <p>{e.strDrink}</p>
+                        
                     </div>
                 ))}
             </div>

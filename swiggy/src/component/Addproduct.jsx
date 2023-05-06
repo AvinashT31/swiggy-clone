@@ -61,7 +61,7 @@ function Addproduct() {
 
     return (
         <div id="addproduct-fullpage">
-            z<div id='addproduct-navbar'>
+            <div id='addproduct-navbar'>
                 <div id='addproduct-nav'>
                     <div>
                         <div>

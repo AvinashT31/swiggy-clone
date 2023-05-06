@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './styles.css'
+import React, {useReducer} from "react";
+import reducer, {initialState} from "../Reducer.js/ReducerB";
 
 function SingleProductpage() {
 
@@ -22,9 +25,21 @@ function SingleProductpage() {
 
     }
 
-    function cart() {
+    const route = useNavigate();
 
+    function cart() {
+       route('/Cart')
     }
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    function increment(){
+        dispatch({type: 'incremented_age'})
+    }
+
+    function Decrement(){
+        dispatch({type:'decremented_age'});
+    }   
 
     return (
         <div>
@@ -87,6 +102,9 @@ function SingleProductpage() {
                     <div id="shownamepage">
                         <img src={singleproduct.strDrinkThumb} />
                         <p>{singleproduct.strDrink}</p>
+                        {/* <h1>{state.age}</h1>
+                        <button style={{fontSize:"18px", marginLeft:"5px"}} onClick={increment}>+</button>
+                        <button style={{fontSize:"18px", marginLeft:"5px"}} onClick={Decrement}>-</button> */}
                     </div>}
             </div>
         </div>
