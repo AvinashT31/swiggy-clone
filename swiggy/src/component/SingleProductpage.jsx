@@ -13,7 +13,7 @@ function SingleProductpage() {
     const Data = useParams();
 
     useEffect(() => {
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
+         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
             .then(res => res.json())
             .then(json => json.drinks)
             .then(json => json.filter(obj => obj.idDrink == Data.id))

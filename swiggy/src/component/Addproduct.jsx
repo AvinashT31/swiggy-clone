@@ -9,11 +9,11 @@ function Addproduct() {
 
     const route = useNavigate();
 
-    function signin(){
+    function signin() {
         route('/');
     }
 
-    function cart(){
+    function cart() {
         route('/Cart');
     }
 
@@ -24,8 +24,8 @@ function Addproduct() {
     }, [])
     console.log(Product, "hwuy");
 
-    function AddToCart(e){
-        
+    function AddToCart(e) {
+
         console.log(e);
         // alert("working");
 
@@ -35,29 +35,43 @@ function Addproduct() {
         var currentuser = JSON.parse(localStorage.getItem("current-user"));
         console.log(currentuser, "currentuser");
 
-         var Alluser = []; 
+        var Alluser = [];
 
-        if(currentuser){
-            for(var i=0; i < DataFromLS.length; i++){
-                if(DataFromLS[i].Email === currentuser['current-user-email']){
-                  var newObj = DataFromLS[i];
-                  newObj['Cartproduct'] = ['Cartproduct'] || [];
-                  newObj['Cartproduct'].push(e);
-                  Alluser.push(newObj);
+        if (currentuser) {
+            for (var i = 0; i < DataFromLS.length; i++) {
+                if (DataFromLS[i].Email === currentuser['current-user-email']) {
+                    var newObj = DataFromLS[i];
+                    newObj['Cartproduct'] = ['Cartproduct'] || [];
+                    newObj['Cartproduct'].push(e);
+                    Alluser.push(newObj);
                 }
-                else{
+                else {
                     Alluser.push(DataFromLS[i]);
                 }
             }
             // console.log(Alluser, "hey");
             localStorage.setItem("UserForReact", JSON.stringify(Alluser));
+            route('/Cart');
             alert("Product added into the cart")
         }
-        else{
+        else {
             alert("login first");
         }
 
     }
+
+    const [cuser, setcuser] = useState();
+    console.log(cuser, "cuser");
+
+    useEffect(() => {
+        var currentuser = JSON.parse(localStorage.getItem("current-user"));
+        console.log(currentuser, "currentuser")
+
+        if (currentuser) {
+            setcuser(currentuser);
+        }
+
+    }, [])
 
     return (
         <div id="addproduct-fullpage">
@@ -96,14 +110,15 @@ function Addproduct() {
                                 <input type="text" placeholder='Help' />
                             </div>
                         </div>
-                        <div>
+                        {cuser ? <div>{cuser.Name}</div> : <div>
                             <div>
                                 <i class="fa-regular fa-user"></i>
                             </div>
                             <div>
                                 <input onClick={() => signin()} type="text" placeholder='Sign In' />
                             </div>
-                        </div>
+                        </div>}
+
                         <div>
                             <div>
                                 <i class="fa-solid fa-cart-shopping"></i>
