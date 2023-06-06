@@ -16,19 +16,19 @@ function Login(){
     console.log(DataFromLS, "DataFromLS");
     
     var flag = false;
-    var user;
+    // var user;
 
     for(var i=0; i < DataFromLS.length; i++){
         if(DataFromLS[i].Email === loginData.Email){
             flag = true;
-            user = DataFromLS[i];
+            // user = DataFromLS[i];
         }
     }
     // console.log(flag, "heree");
     if(flag){
         setloginData({Email:""}); 
-        // var user ={}
-        // user["current-user-email"] = loginData.Email;
+        var user ={}
+        user["current-user-email"] = loginData.Email;
         localStorage.setItem("current-user", JSON.stringify(user));
         alert("Login Successfully")
     }
