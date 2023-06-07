@@ -51,7 +51,7 @@ function Addproduct() {
             }
             // console.log(Alluser, "hey");
             localStorage.setItem("UserForReact", JSON.stringify(Alluser));
-            route('/Cart');
+            // route('/Cart');
             alert("Product added into the cart")
         }
         else {
@@ -110,15 +110,14 @@ function Addproduct() {
                                 <input type="text" placeholder='Help' />
                             </div>
                         </div>
-                        {cuser ? <div>{cuser.Name}</div> : <div>
+                        <div>
                             <div>
                                 <i class="fa-regular fa-user"></i>
                             </div>
                             <div>
                                 <input onClick={() => signin()} type="text" placeholder='Sign In' />
                             </div>
-                        </div>}
-
+                        </div>
                         <div>
                             <div>
                                 <i class="fa-solid fa-cart-shopping"></i>
