@@ -15,7 +15,7 @@ function Index() {
     const [currentuser, setcurrentuser] = useState(false);
     console.log(currentuser, "currentuser");
 
-    const[displayData, setdisplayData] = useState("");
+    const [displayData, setdisplayData] = useState("");
     console.log(displayData, "displayData");
 
     useEffect(() => {
@@ -27,6 +27,7 @@ function Index() {
 
     function logout() {
         localStorage.removeItem("current-user");
+        setcurrentuser(false);
         alert("logout successfully")
     }
 
@@ -34,10 +35,10 @@ function Index() {
 
     function findfood() {
         route('/Addtheproduct');
-    //    route(`/search/${displayData}`);      
+        //    route(`/search/${displayData}`);      
     }
 
-    function updatingData(e){
+    function updatingData(e) {
         setdisplayData(e.target.value);
     }
 
@@ -50,7 +51,6 @@ function Index() {
         setdisplaylogin(true);
     }
 
-
     return (
         <div id="full-page">
             <div id='nav'>
@@ -61,14 +61,14 @@ function Index() {
                                 <img src="https://logos-world.net/wp-content/uploads/2020/11/Swiggy-Symbol.png" alt="" />
                             </div>
                             <div>
-                            {!currentuser && <div>
+                                {!currentuser && <div>
                                     <button onClick={() => login()}>login</button>
-                                </div> }
+                                </div>}
                                 {!currentuser && <div>
                                     <button onClick={() => signup()}>Signup</button>
-                                </div> }
+                                </div>}
                                 {currentuser && <div>
-                                 <button onClick={() => logout()}>Logout</button>
+                                    <button onClick={() => logout()}>Logout</button>
                                 </div>}
                             </div>
                         </div>
@@ -126,8 +126,8 @@ function Index() {
                             <p>Experience Swiggy's superfast delivery for food delivered fresh & on time</p>
                         </div>
                     </div>
-                    {displaysignup && <Signup/>}
-                    {displaylogin && <Login/>}
+                    {displaysignup && <Signup />}
+                    {displaylogin && <Login />}
                 </div>
             </div>
 
