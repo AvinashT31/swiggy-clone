@@ -56,7 +56,7 @@ function Addproduct() {
         }
         else {
             alert("login first");
-        }
+        } 
 
     }
 
